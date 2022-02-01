@@ -1,0 +1,15 @@
+C:\Users\UgurOguzhanPC\Documents\VSCode Projects\ToDo\bin\Debug\net6.0\ToDo.exe
+C:\Users\UgurOguzhanPC\Documents\VSCode Projects\ToDo\bin\Debug\net6.0\ToDo.deps.json
+C:\Users\UgurOguzhanPC\Documents\VSCode Projects\ToDo\bin\Debug\net6.0\ToDo.runtimeconfig.json
+C:\Users\UgurOguzhanPC\Documents\VSCode Projects\ToDo\bin\Debug\net6.0\ToDo.dll
+C:\Users\UgurOguzhanPC\Documents\VSCode Projects\ToDo\bin\Debug\net6.0\ref\ToDo.dll
+C:\Users\UgurOguzhanPC\Documents\VSCode Projects\ToDo\bin\Debug\net6.0\ToDo.pdb
+C:\Users\UgurOguzhanPC\Documents\VSCode Projects\ToDo\obj\Debug\net6.0\ToDo.csproj.AssemblyReference.cache
+C:\Users\UgurOguzhanPC\Documents\VSCode Projects\ToDo\obj\Debug\net6.0\ToDo.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\UgurOguzhanPC\Documents\VSCode Projects\ToDo\obj\Debug\net6.0\ToDo.AssemblyInfoInputs.cache
+C:\Users\UgurOguzhanPC\Documents\VSCode Projects\ToDo\obj\Debug\net6.0\ToDo.AssemblyInfo.cs
+C:\Users\UgurOguzhanPC\Documents\VSCode Projects\ToDo\obj\Debug\net6.0\ToDo.csproj.CoreCompileInputs.cache
+C:\Users\UgurOguzhanPC\Documents\VSCode Projects\ToDo\obj\Debug\net6.0\ToDo.dll
+C:\Users\UgurOguzhanPC\Documents\VSCode Projects\ToDo\obj\Debug\net6.0\ref\ToDo.dll
+C:\Users\UgurOguzhanPC\Documents\VSCode Projects\ToDo\obj\Debug\net6.0\ToDo.pdb
+C:\Users\UgurOguzhanPC\Documents\VSCode Projects\ToDo\obj\Debug\net6.0\ToDo.genruntimeconfig.cache
