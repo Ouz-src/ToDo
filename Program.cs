@@ -19,6 +19,7 @@ namespace ToDo
             kartlar.Add(new Kartlar() { id = 5, adSoyad = "Uğur Oğuzhan Karadeniz", baslik = "Server I/O Hata Teşhisi", icerik = "Server I/O hataları var ise düzeltilmesi ve serverin haftalık bakımı", buyukluk = Buyukluk.M, boardTuru = BoardTuru.INPROGRESS });
             kartlar.Add(new Kartlar() { id = 12, adSoyad = "Metehan Ürkmez", baslik = "Database temizliği", icerik = "Yeni anlaşmalı şirketten gelen Big Data'nın temizlenmesi", buyukluk = Buyukluk.XL, boardTuru = BoardTuru.DONE });
             kartlar.Add(new Kartlar() { id = 9, adSoyad = "Ayşe Tepe", baslik = "Yıllık zam", icerik = "Çalışanların yıllık zamlarının hesaplanması ve güncellenmesi", buyukluk = Buyukluk.S, boardTuru = BoardTuru.DONE });
+            TakimUye();
             IslemTurleri islemTuru = new();
             islemTuru.AnaMenu();
         }
@@ -67,10 +68,9 @@ namespace ToDo
             Console.Write("İçerik giriniz: ");
             yeniIcerik = Console.ReadLine();
             Console.WriteLine("Listeden ID'ye göre atama yapınız: ");
-            foreach (var kart in kartlar)
-            {
-                Console.WriteLine("ID: {0}  ->  İsim - Soyisim: {1}", kart.id, kart.adSoyad);
-            }
+            foreach (var uye in takimUyeleri)
+                Console.WriteLine("ID: {0}  ->  İsim - Soyisim: {1}", uye.Key, uye.Value);
+
             int input = int.Parse(Console.ReadLine());
             var atanacakKisi = kartlar.Find(x => x.id == input);
             if (kartlar.Any(x => x.id == input))
@@ -137,16 +137,43 @@ namespace ToDo
         }
         public void KartSil()
         {
-            Console.Write("Silmek istediğiniz kartın başlığını yazınız: ");
+            Console.WriteLine("Silmek istediğiniz kartın başlığını yazınız:");
+            foreach (var item in kartlar)
+                Console.WriteLine("-> " + item.baslik);
             string baslik = Console.ReadLine();
             if (kartlar.Any(x => x.baslik == baslik))
             {
                 var obj = kartlar.Find(x => x.baslik == baslik);
-                kartlar.Remove(obj);
-                Console.WriteLine("Silme işlemi başarılı! Ana Menü'ye dönmek için bir tuşa basın.");
-                Console.ReadKey();
-                Console.Clear();
-                AnaMenu();
+                Console.WriteLine("Bulunan Kart Bilgileri:\n**************************************");
+                Console.WriteLine("Başlık: {0}", obj.baslik);
+                Console.WriteLine("İçerik: {0}", obj.icerik);
+                Console.WriteLine("Atanan Kişi: {0}", obj.adSoyad);
+                Console.WriteLine("Büyüklük: {0}", obj.buyukluk);
+                Console.WriteLine("-");
+                Console.WriteLine("Silme işlemine devam etmek istiyor musunuz? (y/n)");
+                string y_n = Console.ReadLine();
+                if (y_n == "y")
+                {
+                    kartlar.Remove(obj);
+                    Console.WriteLine("Silme işlemi başarılı!\nAna Menü'ye dönmek için bir tuşa basın.");
+                    Console.ReadKey();
+                    Console.Clear();
+                    AnaMenu();
+                }
+                else if (y_n == "n")
+                {
+                    Console.WriteLine("Silme işlemi iptal edildi!\nAna Menü'ye dönmek için bir tuşa basın.");
+                    Console.ReadKey();
+                    Console.Clear();
+                    AnaMenu();
+                }
+                else
+                {
+                    Console.WriteLine("Sadece y veya n tuşuna basmalısınız.\nAna Menü'ye dönmek için bir tuşa basın.");
+                    Console.ReadKey();
+                    Console.Clear();
+                    AnaMenu();
+                }
             }
             else
             {
@@ -172,7 +199,9 @@ namespace ToDo
         }
         public void KartTası()
         {
-            Console.Write("Taşımak istediğiniz kartın başlığını yazınız: ");
+            Console.WriteLine("Taşımak istediğiniz kartın başlığını yazınız:");
+            foreach (var item in kartlar)
+                Console.WriteLine("-> " + item.baslik);
             string baslik = Console.ReadLine();
             if (kartlar.Any(x => x.baslik == baslik))
             {
